@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Super To-Do List</h1>
+      <p>Kelola tugas Anda dengan fitur lengkap</p>
+    </div>
+
+    <div class="task-input">
+      <input type="text" id="task" placeholder="Apa yang perlu dilakukan?" />
+
+      <select id="priority">
+        <option value="rendah">Rendah</option>
+        <option value="sedang" selected>Sedang</option>
+        <option value="tinggi">Tinggi</option>
+      </select>
+
+      <select id="category">
+        <option value="pekerjaan" selected>Pekerjaan</option>
+        <option value="sekolah">Sekolah</option>
+        <option value="pribadi">Pribadi</option>
+      </select>
+
+      <!-- Input waktu dan tanggal menggunakan datetime-local -->
+      <input type="datetime-local" id="deadline" />
+
+      <button id="addTask" class="add-btn">Tambah Tugas</button>
+    </div>
+
+    <div class="filter">
+      <button class="active">Semua</button>
+      <button>Aktif</button>
+      <button>Selesai</button>
+      <button>Hari Ini</button>
+      <button>Prioritas Tinggi</button>
+      <button class="delete-done">Hapus Selesai</button>
+    </div>
+
+    <div class="task-list">
+      <p class="empty">Tidak ada tugas<br>Tambahkan tugas baru untuk memulai</p>
+    </div>
+  </div>
+</body>
+</html>

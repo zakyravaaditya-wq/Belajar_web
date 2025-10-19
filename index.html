@@ -28,25 +28,23 @@
         <option value="pribadi">Pribadi</option>
       </select>
 
-      <!-- Input waktu dan tanggal menggunakan datetime-local -->
       <input type="datetime-local" id="deadline" />
 
       <button id="addTask" class="add-btn">Tambah Tugas</button>
     </div>
 
     <div class="filter">
-      <button class="active">Semua</button>
-      <button>Aktif</button>
-      <button>Selesai</button>
-      <button>Hari Ini</button>
-      <button>Prioritas Tinggi</button>
-      <button class="delete-done">Hapus Selesai</button>
+      <button class="active" id="showAll">Semua</button>
+      <button id="showActive">Aktif</button>
+      <button id="showDone">Selesai</button>
+      <button id="clearDone" class="delete-done">Hapus Selesai</button>
     </div>
 
-    <div class="task-list">
+    <div class="task-list" id="taskList">
       <p class="empty">Tidak ada tugas<br>Tambahkan tugas baru untuk memulai</p>
     </div>
   </div>
- <script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,46 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Super To-Do List</title>
+  <title>TaskMate</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>Super To-Do List</h1>
-      <p>Kelola tugas Anda dengan fitur lengkap</p>
+    <h1>TaskMate</h1>
+    <p>Kelola tugas harianmu dan bangun streak produktifmu 🔥</p>
+
+    <div class="input-section">
+      <input type="text" id="inputTugas" placeholder="Tulis tugas baru...">
+      <input type="datetime-local" id="inputDeadline">
+      <button id="btnTambah">Tambah</button>
+      <label><input type="checkbox" id="tugasHarian"> Jadikan tugas harian</label>
     </div>
 
-    <div class="task-input">
-      <input type="text" id="task" placeholder="Apa yang perlu dilakukan?" />
-
-      <select id="priority">
-        <option value="rendah">Rendah</option>
-        <option value="sedang" selected>Sedang</option>
-        <option value="tinggi">Tinggi</option>
-      </select>
-
-      <select id="category">
-        <option value="pekerjaan" selected>Pekerjaan</option>
-        <option value="sekolah">Sekolah</option>
-        <option value="pribadi">Pribadi</option>
-      </select>
-
-      <input type="datetime-local" id="deadline" />
-
-      <button id="addTask" class="add-btn">Tambah Tugas</button>
+    <div class="filter-section">
+      <button class="filter" data-filter="semua">Semua</button>
+      <button class="filter" data-filter="aktif">Aktif</button>
+      <button class="filter" data-filter="selesai">Selesai</button>
+      <button id="hapusSelesai">Hapus Selesai</button>
     </div>
 
-    <div class="filter">
-      <button class="active" id="showAll">Semua</button>
-      <button id="showActive">Aktif</button>
-      <button id="showDone">Selesai</button>
-      <button id="clearDone" class="delete-done">Hapus Selesai</button>
-    </div>
-
-    <div class="task-list" id="taskList">
-      <p class="empty">Tidak ada tugas<br>Tambahkan tugas baru untuk memulai</p>
-    </div>
+    <ul id="daftarTugas"></ul>
   </div>
 
   <script src="script.js"></script>

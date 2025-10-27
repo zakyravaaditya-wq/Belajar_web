@@ -1,90 +1,216 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9;
+}
+
+/* ======= Body ======= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3e8ff, #e0f2fe);
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 40px;
-}
-
-.container {
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  width: 700px;
-  overflow: hidden;
-}
-
-.header {
-  background: linear-gradient(90deg, #4f9eff, #38d4e8);
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.task-input {
-  display: flex;
-  gap: 10px;
   padding: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.task-input input,
-.task-input select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  flex: 1 1 200px;
-}
-
-.add-btn {
-  background: linear-gradient(90deg, #4f9eff, #38d4e8);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
-  flex: 1 1 100%;
-  max-width: 200px;
-}
-
-.add-btn:hover {
-  opacity: 0.9;
-}
-
-.filter {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 0;
-  flex-wrap: wrap;
-}
-
-.filter button {
-  border: none;
-  padding: 8px 14px;
+/* ======= Container ======= */
+.container {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
   border-radius: 20px;
-  background-color: #f1f1f1;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 25px 30px;
+  border: 1px solid rgba(200, 150, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 10px 30px rgba(150, 100, 255, 0.2);
+}
+
+/* ======= Heading ======= */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #7c3aed;
+  margin-bottom: 5px;
+}
+
+p {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* ======= Input Section ======= */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-section input[type="text"],
+.input-section input[type="datetime-local"] {
+  padding: 10px 14px;
+  border: 1px solid #d8b4fe;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.input-section input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 5px rgba(124, 58, 237, 0.4);
+}
+
+#btnTambah {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.filter button.active {
-  background-color: #4f9eff;
-  color: white;
+#btnTambah:hover {
+  background: #6d28d9;
 }
 
-.filter .delete-done {
-  background-color: #ffe5e5;
-  color: #ff5a5a;
+label {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.task-list .empty {
-  text-align: center;
-  color: #999;
-  padding: 40px 0;
-  font-style: italic;
+/* ======= Filter Section ======= */
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-section button {
+  flex: 1;
+  background: #ede9fe;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 0;
+  color: #5b21b6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-section button:hover {
+  background: #c4b5fd;
+  color: #fff;
+}
+
+#hapusSelesai {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+#hapusSelesai:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* ======= Daftar Tugas ======= */
+#daftarTugas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#daftarTugas li {
+  background: #faf5ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+#daftarTugas li:hover {
+  background: #ede9fe;
+  box-shadow: 0 2px 6px rgba(124, 58, 237, 0.1);
+}
+
+.tugas-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tugas-nama {
+  font-weight: 600;
+  color: #4c1d95;
+}
+
+.tugas-deadline {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.btn-aksi {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-aksi button {
+  border: none;
+  padding: 6px 9px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-selesai {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.btn-selesai:hover {
+  background: #5b21b6;
+}
+
+.btn-hapus {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.btn-hapus:hover {
+  background: #d1d5db;
+}
+
+/* ======= Responsif ======= */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .filter-section button {
+    flex: 1 1 45%;
+  }
 }
